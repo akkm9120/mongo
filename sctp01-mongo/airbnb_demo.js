@@ -1,3 +1,5 @@
+const { application } = require("express");
+
 // require in the MongoDB client
 const MongoClient = require("mongodb").MongoClient;
 require("dotenv").config();
@@ -21,3 +23,10 @@ async function main() {
  console.log(listings);
 }
 main();
+
+
+
+application.get("view-food/:foodid", async function(req,res){
+   const foodRecord= await db.collection(COLLECTION).findOne();
+   
+})
